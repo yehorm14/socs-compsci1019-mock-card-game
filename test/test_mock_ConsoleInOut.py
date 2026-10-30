@@ -7,9 +7,11 @@ class test_mock_ConsoleInOut(unittest.TestCase):
     def test_get_input_string(self, mock_input):
         pass
 
-    def test_get_input_integer(self):
+    @patch('card_game.communication.ConsoleInOut.get_string')
+    def test_get_input_integer(self, mock_get_string):
         #Sub-task 1: Mock Console Input Integer
-        pass
+        mock_get_string.return_value = "18"
+        self.assertEqual(get_input_integer("Enter a number"), 18)
 
     def test_get_input_string_builtin(self):
         pass
