@@ -16,9 +16,15 @@ class test_mock_ConsoleInOut(unittest.TestCase):
     def test_get_input_string_builtin(self):
         pass
 
-    def test_get_integer_max_attempts(self):
+    @patch('card_game.communication.ConsoleInOut.get_string')
+    def test_get_integer_max_attempts(self, mock_get_string):
         #Sub-task 3 – Mock Console Input With Built In
-        pass
+        mock_get_string.return_value = "abc"
+        
+        result = get_integer()
+
+        self.assertEqual(result, -1)
+        self.assertEqual(mock_get_string.call_count, 5)
 
     def test_get_input_integer_builtin(self):
         pass
