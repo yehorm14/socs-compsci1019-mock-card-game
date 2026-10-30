@@ -4,6 +4,11 @@ from card_game.LoadCSV import *
 
 class test_mock_LoadCSV(unittest.TestCase):
 
-    def test_get_csv_rows(self):
+    @patch('builtins.open', new_callable=mock_open, read_data="Derek\nXi")
+    def test_get_csv_rows(self, mock_file):
         #Sub-task 4 – Mock File Load
-        pass
+        rows = get_csv_rows("any_file.csv")
+
+        self.assertEqual(rows[1][0], "Xi")
+        
+        
