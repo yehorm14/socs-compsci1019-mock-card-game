@@ -1,3 +1,15 @@
+# My work
+
+This is a fork of [andrewlblair/socs-compsci1019-mock-card-game](https://github.com/andrewlblair/socs-compsci1019-mock-card-game) (a University of Glasgow COMPSCI1019 lab). It contains my `unittest.mock` tests in `test/` for `ConsoleInOut`, `Game`, `LoadCSV` and `Deck`.
+
+Run the tests from the repository root:
+
+```
+python -m unittest
+```
+
+---
+
 # Introduction
 
 The application plays cards with a standard 52 card deck, with suits hearts, spades, diamonds and clubs. The following two games are played:
